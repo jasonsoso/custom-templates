@@ -1,0 +1,12 @@
+.classpath
+.project
+.settings/
+.springBeans
+target/
+.svn/
+classes/
+.DS_Store
+.log
+.metadata/
+Test/
+wshop/

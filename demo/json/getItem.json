@@ -1,0 +1,25 @@
+{
+    "status": 1, 
+    "list": [
+        {
+            "item_id": "2511374", 
+            "title": "白色的羽绒", 
+            "price": "400.00", 
+            "original_price": "490.00", 
+            "create_time": "2015-12-24 00:01:19", 
+            "link": "http://m.wxfenxiao.com/Item/detail/id/2511374/sid/2022220.html", 
+            "pic": "http://img.wxfenxiao.com/2022220/2015-12/5677c89c7b555.jpg@!", 
+            "is_compress": 1
+        },{
+            "item_id": "2511378", 
+            "title": "黑色的羽绒", 
+            "price": "500.00", 
+            "original_price": "590.00", 
+            "create_time": "2015-12-24 00:01:19", 
+            "link": "http://m.wxfenxiao.com/Item/detail/id/2511374/sid/2022220.html", 
+            "pic": "http://img.wxfenxiao.com/2022220/2015-12/567ac7a2f34cb.jpg@!", 
+            "is_compress": 1
+        }
+    ], 
+    "page": ""
+}

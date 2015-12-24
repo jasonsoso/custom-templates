@@ -1,0 +1,21 @@
+{
+    "status": 1, 
+    "data": {
+        "total": "3", 
+        "tree": [
+            {
+                "name": "未分类", 
+                "subFolder": [ ], 
+                "id": 0, 
+                "picNum": 3
+            }, 
+            {
+                "name": "未命名文件夹", 
+                "parent_id": "0", 
+                "id": "2068429", 
+                "picNum": "0"
+            }
+        ]
+    }, 
+    "msg": ""
+}

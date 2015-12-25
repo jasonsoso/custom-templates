@@ -1,6 +1,7 @@
 var HYD = HYD ? HYD: {};
 HYD.Constant = HYD.Constant ? HYD.Constant: {},
 HYD.popbox = HYD.popbox ? HYD.popbox: {},
+//链接到哪里去
 HYD.linkType = {
     1 : "选择商品",
     2 : "商品分组",
@@ -13,7 +14,8 @@ HYD.linkType = {
     9 : "购物车",
     10 : "全部商品",
     12 : "商品分类",
-    11 : "自定义链接"
+    11 : "自定义链接",
+    13 : "我的订单"
 },
 HYD.getTimestamp = function() {
     var e = new Date;
@@ -398,6 +400,7 @@ HYD.popbox.ModulePicker = function(e) {
         })
     })
 },
+//1 : "选择商品"  2 : "商品分组"
 HYD.popbox.GoodsAndGroupPicker = function(e, i) {
     var o, n, t = $("#tpl_popbox_GoodsAndGroupPicker").html(),
     c = $(t),
@@ -1093,69 +1096,75 @@ HYD.popbox.dplPickerColletion = function(e) {
     o = $.extend(!0, {},
     i, e);
     switch (parseInt(o.linkType)) {
-    case 1:
+    case 1://1 : "选择商品"
         HYD.popbox.GoodsAndGroupPicker("goods", o.callback);
         break;
-    case 2:
+    case 2://2 : "商品分组"
         HYD.popbox.GoodsAndGroupPicker("group", o.callback);
         break;
-    case 3:
+    case 3://3 : "专题页面"
         HYD.popbox.MgzAndMgzCate("mgz", o.callback);
         break;
-    case 4:
+    case 4://4 : "页面分类"
         HYD.popbox.MgzAndMgzCate("mgzCate", o.callback);
         break;
-    case 5:
+    case 5://5 : "营销活动"
         HYD.popbox.GamePicker("all", o.callback);
         break;
-    case 6:
+    case 6://6 : "店铺主页"
         var n = {
             title: "店铺主页",
             link: "/Shop/index"
         };
         o.callback(n, 6);
         break;
-    case 7:
+    case 7://7 : "会员主页"
         var n = {
             title: "会员主页",
             link: "/User/index"
         };
         o.callback(n, 7);
         break;
-    case 8:
+    case 8://8 : "分销申请"
         var n = {
             title: "分销申请",
             link: "/User/dist_apply"
         };
         o.callback(n, 8);
         break;
-    case 9:
+    case 9://9 : "购物车"
         var n = {
             title: "购物车",
             link: " /Item/cart"
         };
         o.callback(n, 9);
         break;
-    case 10:
+    case 10://10 : "全部商品"
         var n = {
             title: "全部商品",
             link: " /Item/lists"
         };
         o.callback(n, 10);
         break;
-    case 11:
+    case 11://11 : "自定义链接"
         var n = {
             title: "",
             link: ""
         };
         o.callback(n, 11);
         break;
-    case 12:
+    case 12://12 : "商品分类"
         var n = {
             title: "商品分类",
             link: "/Item/item_class"
         };
-        o.callback(n, 12)
+        o.callback(n, 12);
+    case 13://13 : "我的订单"
+        var n = {
+            title: "我的订单",
+            link: "http://csj.cloudcall.cn/wshop/mobile/user.php?act=order_list"
+        };
+        o.callback(n, 13)
     }
 },
 HYD.ajaxPopTable = function(e) {

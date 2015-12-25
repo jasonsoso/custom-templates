@@ -1,4 +1,5 @@
 $(function() {
+    //默认店铺模板
     Defaults = {
         31 : {
             page: {

@@ -17,13 +17,11 @@
 
     <title>我淘你Jason</title>
 
-    <link rel="stylesheet" href="PublicMob/css/dist/style.css?v=20151221211620">
-    <link rel="stylesheet" href="PublicMob/css/dist/SpsBtn.css?v=20151221211620">
+    <link rel="stylesheet" href="PublicMob/css/dist/style.css">
+    <link rel="stylesheet" href="PublicMob/css/dist/SpsBtn.css">
     
 	<link rel="stylesheet" href="PublicMob/css/dist/index/header_style31.css" />
 
-
-    
     <style>
             .mdetail_bottom{max-width:100%;}
         </style></head>
@@ -104,25 +102,11 @@
                                             </ul>
                 </section>            </section><section class="modulePadding" style="padding-top:<px;padding-bottom:<px;">
 	<div class="fulltext"><p>『富文本编辑器』你好</p></div>
-</section>	</div>
+</section>	
+</div>
 
-    <section class="members_bottom">
-            <section>
-                <a href="/Shop/index/sid/2022220/pid/0.html">商城首页<i></i></a>
-                <a href="/Item/lists/sid/2022220/pid/0.html">所有商品<i></i></a>
-                <a href="/User/index/sid/2022220/pid/0.html">会员中心<i></i></a>
-                <a href="/Item/cart/sid/2022220/pid/0.html">购物车<i></i></a>
-                <a href="/User/dist_apply/sid/2022220/pid/0.html">分销申请<i></i></a>            </section>
-        </section>    <section class="members_bottom">
-            <section style="width:auto;height:auto;padding:0 3.125%;">
-                <p>All Rights Reserved &copy;2015 微分销 版权所有</p>
-                <p>技术支持：微分销 <a href="http://www.miitbeian.gov.cn" style="color: #b3b3b3;"></a></p>                
-            </section>
-                    </section>
-    <section class="qiboot-content">
-                <section id="qiboot-copyleft" style="background-image:url(http://mp.wxfenxiao.com/PublicMob/images/logo-m.png)"></section>
-                <section id="qiboot-copyright"></section>
-            </section>
+
+
     <b id="htmlReplace-navCart"></b>
 
 </div>
@@ -145,7 +129,9 @@
                                                     </dl>                                </section>
 
         </section>
-    </div><div id="mmexport"><img src="http://mp.wxfenxiao.com/PublicMob/images/mmexport.png" width="100%" alt=""></div>
+    </div>
+
+<div id="mmexport"><img src="http://mp.wxfenxiao.com/PublicMob/images/mmexport.png" width="100%" alt=""></div>
 <div id="mmexport-pl" style="display: none;"><img src="http://mp.wxfenxiao.com/PublicMob/images/mmexport1.png" width="100%" alt=""></div>
 <div id="mmexport-share" style="display: none;"><img src="http://mp.wxfenxiao.com/PublicMob/images/mmexport2.png" width="100%" alt=""></div>
 
@@ -153,7 +139,7 @@
 <!-- 悬浮按钮 -->
 <div class="mask_menu" id="menubtn" style="display: none;"></div>
     <div class="menu" id="menufloat"><i class="icon-menu"></i></div>
-            <div class="menu-c notel nofocus" id="menufloat-c" style="">
+        <div class="menu-c notel nofocus" id="menufloat-c" style="">
             <div class="menu-c-out">
                 <div class="menu-c-inner">
                     <a class="a-home" href="/Shop/index" title="首页" style="display: block;"></a>
@@ -165,7 +151,8 @@
                     <a class="a-server" href="/Item/lists" title="搜索" style="display: block;"></a>
                 </div>
             </div>
-        </div>    <!-- 收藏 -->
+        </div>    
+    <!-- 收藏 -->
     <div class="collectbg"><img src="http://mp.wxfenxiao.com/PublicMob/images/collectbg.png" width="100%" alt=""><a href="javascript:;" class="a-know">我知道了</a></div>
     <!-- 分享 -->
     <div class="sharebg"><img src="http://mp.wxfenxiao.com/PublicMob/images/mmexport.png" width="100%" alt=""><a href="javascript:;" class="a-know">我知道了</a></div>
@@ -177,13 +164,11 @@
 <script src="PublicMob/js/jquery/jquery.lazyload.min.js?v=20151221211620"></script>
 <script src="PublicMob/js/dist/main.js?v=20151221211620"></script>
 <!--<script src="http://mp.wxfenxiao.com/PublicMob/js/dist/cbb_jssdk.js?v=20151221211620"></script>-->
-<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<!--<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>-->
 <script>
     var IsShop="";//是否是首页
 
     $(function(){
-
-                
         // 邀请好友代付
         $(document).on('click','#fxBtn-share',function(){
             $("#mmexport-share").show();
@@ -217,7 +202,7 @@
             imgUrl: ""      // 分享图标
         };
 
-                        (function(){
+        (function(){
             // 控制添加商品的图片显示高度，确保商品布局正常
             $('.b_mingoods,.mingoods').each(function(index, el) {
                 var me = $(this),
@@ -345,17 +330,17 @@
 //        }, "json");
 //
         // 购物车数据
-        var carturl="/Item/cart/sid/2022220/pid/0.html";
-            $.post("/Shop/getCartNum", { }, function(data){
-                var html='<a href="'+carturl+'" class="navCart" id="navCart"><span>'+data.num+'</span></a>';
-                $("#htmlReplace-navCart").replaceWith(html);
-                if(data.num>0){
-                    $("#navCart").show();
-                }
-                else{
-                    $("#navCart").hide();
-                }
-            }, "json");
+        //var carturl="/Item/cart/sid/2022220/pid/0.html";
+        //    $.post("/Shop/getCartNum", { }, function(data){
+        //        var html='<a href="'+carturl+'" class="navCart" id="navCart"><span>'+data.num+'</span></a>';
+        //        $("#htmlReplace-navCart").replaceWith(html);
+        //        if(data.num>0){
+        //            $("#navCart").show();
+        //        }
+        //        else{
+        //            $("#navCart").hide();
+        //        }
+        //    }, "json");
     });
 </script>
 
@@ -389,8 +374,5 @@ $(function(){
 });
 </script>
 
-
-
 </body>
 </html>
-<!-- 20151221 -->

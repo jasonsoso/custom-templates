@@ -1,4 +1,5 @@
 $(function() {
+    //主要是编辑店铺主页的事件
     var n = $("#j-initdata").val(), o = $("#j-pageID").val();
     n = n.length ? $.parseJSON(n) : Defaults[o];
     //设置店铺主页标题
@@ -64,6 +65,12 @@ $(function() {
             })
         }
     } (),
+    //验证
+    $("#j-veriyPage").click(function() {
+        var fal = HYD.DIY.Unit.verify();
+        alert("验证结果："+fal);
+        return fal;
+    }),
     //保存
     $("#j-savePage").click(function() {
         return HYD.DIY.Unit.getData() ? ($.ajax({

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>underscore demo</title>
+
+</head>
+<body>
+
+<script src="../Public/js/dist/lib-min.js"></script>
+
+<script>
+    $(function(){
+    	test_bind();
+    	function test_bind(){
+    		console.log("test_bind");
+            var func = function(greeting){ 
+                return greeting + ': ' + this.name 
+            };
+            func = _.bind(func, {name: 'moe'}, 'hi');
+            var result = func();
+			console.log("result:"+result);
+    	}
+        test_delay();
+        function test_delay(){
+            console.log("test_delay");
+            var log = _.bind(console.log, console);
+            _.delay(log, 1000, 'logged later');
+
+        }
+
+        
+    	
+    });
+</script>
+</body>
+</html>

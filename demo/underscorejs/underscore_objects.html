@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>underscore demo</title>
+
+</head>
+<body>
+
+<script src="../Public/js/dist/lib-min.js"></script>
+
+<script>
+    $(function(){
+    	test_keys();
+    	function test_keys(){
+    		console.log("test_keys");
+            var p = {one: 1, two: 2, three: 3};
+            var keys = _.keys(p);
+			console.log("keys:"+keys);
+
+            var values = _.values(p);
+            console.log("values:"+values);
+    	}
+
+
+        test_pairs();
+        function test_pairs(){
+            console.log("test_pairs");
+            var p = {one: 1, two: 2, three: 3};
+            var pairs = _.pairs(p);
+            console.log("对象转换数组:"+JSON.stringify(pairs));
+
+            var invert = _.invert(p);
+            console.log("key value对象交换:"+JSON.stringify(invert));
+        }
+
+        test_pick();
+        function test_pick(){
+            console.log("test_pick");
+            var p = {name: 'moe', age: 50, userid: 'moe1'};
+            var pick = _.pick(p, 'name', 'age');
+            console.log("pick:"+JSON.stringify(pick));
+
+            var omit = _.omit(p, 'userid');
+            console.log("omit:"+JSON.stringify(omit));
+        }
+        test_clone();
+        function test_clone(){
+            console.log("test_clone");
+            var p = {name: 'moe', age: 50, userid: 'moe1'};
+            var clone = _.clone(p, 'name', 'age');
+            console.log("clone:"+JSON.stringify(clone));
+
+            var fal = _.has(p, "name");
+            console.log("是否包含:"+fal);
+
+        }
+        test_isEqual();
+        function test_isEqual(){
+            console.log("test_isEqual");
+            
+            var stooge = {name: 'moe', luckyNumbers: [13, 27, 34]};
+            var clone  = {name: 'moe', luckyNumbers: [13, 27, 34]};
+
+            console.log("stooge == clone:"+(stooge == clone));
+            
+            console.log("isEqual:"+_.isEqual(stooge, clone));
+
+
+        }
+
+        test_isEmpty();
+        function test_isEmpty(){
+            console.log("test_isEmpty");
+            console.log("isEmpty:"+_.isEmpty([1, 2, 3]));
+            
+            console.log("isEmpty:"+_.isEmpty({}));
+        }
+
+
+        test_isArray();
+        function test_isArray(){
+            console.log("test_isArray");
+            var arguments = 1;
+            console.log("isArray:"+_.isArray(arguments));
+            
+            console.log("isArray:"+_.isArray([1,2,3]));
+
+            console.log("isObject:"+_.isObject({}));
+            console.log("isObject:"+_.isObject(1));
+            
+        }
+
+        test_isFunction();
+        function test_isFunction(){
+            console.log("test_isFunction");
+
+            console.log("isFunction:"+_.isFunction(alert));
+            
+            console.log("isFunction:"+_.isFunction(test_isArray));
+            console.log("isFunction:"+_.isFunction("123"));
+
+            console.log("isNumber:"+_.isNumber("123"));
+            console.log("isNumber:"+_.isNumber(123));
+        }
+
+        test_isFinite();
+        function test_isFinite(){
+            console.log("test_isFinite");
+
+            console.log("isFinite:"+_.isFinite(-101));
+            console.log("isFinite:"+_.isFinite(-Infinity));
+
+            console.log("isBoolean:"+_.isBoolean(true));
+            console.log("isBoolean:"+_.isBoolean(false));
+            console.log("isBoolean:"+_.isBoolean(1));
+            console.log("isBoolean:"+_.isBoolean(0));
+
+            console.log("isDate:"+_.isDate(new Date()));
+
+            console.log("isRegExp:"+_.isRegExp(/moe/));
+            
+        }
+
+        test_isNull();
+        function test_isNull(){
+            console.log("test_isNull");
+
+            console.log("isNull："+_.isNull(null));
+            console.log("isNull："+_.isNull(undefined));
+
+            
+
+            console.log("isUndefined："+_.isUndefined(undefined));
+
+        }
+
+
+        test_template();
+        function test_template(){
+            console.log("test_template");
+
+            var compiled = _.template("hello: <%= name %>,hello:<%=name2%>");
+            var template = compiled({name: 'moe',name2: 'jason'});
+            console.log("template:"+template);
+
+            var template2 = _.template("<b><%- value %></b>");
+            var html2 = template2({value: '<script>'});
+            console.log("template2:"+html2);
+
+            var compiled = _.template("<% print('Hello ' + epithet); %>");
+            var html3 = compiled({epithet: "stooge"});
+            console.log("template3:"+html3);
+
+        }
+        
+    	
+    });
+</script>
+</body>
+</html>

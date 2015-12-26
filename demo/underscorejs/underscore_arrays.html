@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>underscore demo</title>
+
+</head>
+<body>
+
+<script src="../Public/js/dist/lib-min.js"></script>
+
+<script>
+    $(function(){
+    	test_first();
+    	function test_first(){
+    		console.log("test_first");
+    		var arry = [1, 2, 5, 3];
+    		console.log("first:"+_.first(arry));
+            console.log("initial:"+_.initial(arry));
+            console.log("last:"+_.last(arry));
+            
+    	}
+
+        test_compact();
+    	function test_compact(){
+            console.log("test_compact");
+            var arry = _.compact([0, 1, false, 2, '', 3]);
+            console.log("arry:"+arry);
+        }
+        test_without();
+        function test_without(){
+            console.log("test_without");
+            var arry = _.without([1, 2, 1, 0, 3, 1, 4], 0, 1);
+            console.log("arry:"+arry);
+        }
+        test_union();
+        function test_union(){
+            console.log("test_union");
+            var result = _.union([1, 2, 3], [101, 2, 1, 10], [2, 1]);
+            console.log("result:"+result);
+
+            var result2 = _.intersection([1, 2, 3], [101, 2, 1, 10], [2, 1]);
+            console.log("交集:"+result2);
+        }
+
+        test_difference();
+        function test_difference(){
+            console.log("test_difference");
+            var result = _.difference([1, 2, 3, 4, 5], [5, 2, 10]);
+            console.log("result:"+result);
+
+        }
+
+        test_zip();
+        function test_zip(){
+            console.log("test_zip");
+            var result = _.zip(['moe', 'larry', 'curly'], [30, 40, 50], [true, false, false]);
+            console.log("result:"+JSON.stringify(result));
+
+        }
+
+        test_object();
+        function test_object(){
+            console.log("test_object");
+            var r1 = _.object(['moe', 'larry', 'curly'], [30, 40, 50]);
+
+            var r2 = _.object([['moe', 30], ['larry', 40], ['curly', 50]]);
+
+            console.log("r1:"+JSON.stringify(r1));
+            console.log("r2:"+JSON.stringify(r2));
+
+        }
+    	
+    });
+</script>
+</body>
+</html>

@@ -158,6 +158,14 @@
             var html3 = compiled({epithet: "stooge"});
             console.log("template3:"+html3);
 
+            var html = 
+            "<%if(xxx){%>"+
+                   "<div>xxx</div>"+
+            "<%}%>";
+            var template5 = _.template(html);
+            var html5 = template5({xxx: true});
+            console.log("html5:"+html5);
+
         }
         
     	

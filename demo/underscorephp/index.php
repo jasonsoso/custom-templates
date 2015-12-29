@@ -14,7 +14,7 @@ $smarty->cache_lifetime = 120;
 $json = '{
   "page": {
     "title": "I淘你Jason", 
-    "hasMargin": "1", 
+    "hasMargin": "0", 
     "backgroundColor": "#f8f8f8"
   }, 
   "PModules": [
@@ -567,7 +567,11 @@ if(count($PModules)>0){
 	$html.= '</div>';
 }
 if(count($LModules)>0){
-	$html.= '<div class="members_con">';
+	if($page->{"hasMargin"} == 0 ){
+		$html.= '<div class="members_con">';
+	}else{
+		$html.= '<div class="members_con noMargin">';
+	}
 	foreach ($LModules as $LModule) {
 		$html.=($indexTemple->addTemple($LModule));
 	}
@@ -577,6 +581,7 @@ if(count($LModules)>0){
 
 
 $smarty->assign("title", $page->{'title'}, true);
+$smarty->assign("backgroundColor", $page->{'backgroundColor'}, true);
 $smarty->assign("body", $html, true);
 
 //$smarty->display('index.htm');
